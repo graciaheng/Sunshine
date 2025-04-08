@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-title>Gratitude</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <br>
+<ion-title>What are you grateful for today :) <3</ion-title>
+
+<!-- dynamic list of inputs -->
+<ion-list>
+  <ion-item *ngFor="let input of gratitudeInputs; let i = index">
+    <ion-input
+      [(ngModel)]="input.text"
+      label=""
+      labelPlacement="stacked"
+      [clearInput]="true"
+      placeholder="I am grateful for... "
+    >
+    </ion-input>
+  </ion-item>
+
+</ion-list>
+
+<ion-fab horizontal="end"> <!-- move the button to the right side of the page -->
+  <ion-fab-button (click)="addGratitude()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-button color="success">Done</ion-button>
+
+</ion-content>
