@@ -8,5 +8,25 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-<ion-title>History: {{ gratitudeInputs }}</ion-title>
+  <br>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>You were grateful for...</ion-card-title>
+        <ion-card-subtitle>(date)</ion-card-subtitle>
+      </ion-card-header>*
+
+      <div *ngFor="let input of gratitudeInputs">
+
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            {{ input.text }} <!-- data binding -->
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+      <ion-datetime></ion-datetime>
+  </div>
+</ion-card>
+
+
 </ion-content>
