@@ -7,20 +7,39 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
   <br>
+
   <div style="text-align: center;"> <!--aligns center-->
     <ion-title>Hey! How are you doing today? </ion-title>
     <br>
     <ion-button [routerLink]="['/gratitude']">Practise Gratitude</ion-button>
   </div>
+
   <br>
+
   <div style="text-align: center;"> <!--aligns center-->
   <ion-button [routerLink]="['/history']">Check History</ion-button>
   </div>
+
   <br>
+
+  <div style="text-align: center;"> <!--aligns center-->
+    <ion-button [routerLink]="['/mood-checker']">Mood Time!</ion-button>
+    <ion-title>Your current mood is: {{ myStatus }} </ion-title>
+    </div>
+  
+    <br>
+
   <div style="text-align: center;">
     <h3>Need some inspiration?</h3>
     <ion-button (click)="openBrowser()">Click me</ion-button>
-    </div>
+  </div>
+
+  <br>
+
+  <ol>
+    <li *ngFor ="let d of quote"> <p> {{d.quote}} </p> {{d.author}} </li>
+  </ol>
 
 </ion-content>

@@ -18,4 +18,8 @@ export const routes: Routes = [
     path: 'history',
     loadComponent: () => import('./history/history.page').then( m => m.HistoryPage)
   },
+  {
+    path: 'mood-checker',
+    loadComponent: () => import('./mood-checker/mood-checker.page').then( m => m.MoodCheckerPage)
+  },
 ];
