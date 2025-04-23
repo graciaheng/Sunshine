@@ -1,0 +1,60 @@
+.header {
+    font-family: "DM Serif Display", serif;
+    font-size: 25px;
+    color:#000000;
+}
+
+ion-content {
+    --background: #fff8b9;
+}
+
+ion-input {
+    --background: #fff8b9;
+}
+
+ion-item {
+    --background: #fff8b9;
+}
+
+.custom-title {
+    font-family: "DM Serif Display", serif;
+    font-size: 25px;
+}
+
+.gratitude-list {
+    background: #fff8b9;
+}
+
+.button-wrapper {
+
+    display: flex;
+    padding: 16px;
+    border-radius: 12px;
+  
+}
+  
+.custom-button {
+    --border-radius: 30px;
+    --background: #ffffff;
+    --border-width: 1.9px;    
+    --border-style: solid;
+    --border-color:#000000;
+    --color: #000000;
+}
+
+.circle-button-wrapper {
+
+    display: flex;
+    padding: 5px;
+    border-radius: 12px;
+  
+}
+
+.custom-circle-button {
+    --padding: 10px;
+    --background: #ffffff;
+    --border-width: 1.9px;    
+    --border-style: solid;
+    --border-color:#000000;
+    --color: #000000;
+}

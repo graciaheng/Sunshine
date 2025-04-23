@@ -1,45 +1,147 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="header">
       Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-menu-toggle auto-hide="true">
+        <ion-item routerLink="/home" routerDirection="root">
+          <ion-label>Home</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
 
+      <ion-menu-toggle auto-hide="true">
+        <ion-item routerLink="/gratitude" routerDirection="forward">
+          <ion-label>Gratitude</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle auto-hide="true">
+        <ion-item routerLink="/history" routerDirection="forward">
+          <ion-label>History</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle auto-hide="true">
+        <ion-item routerLink="/mood-checker" routerDirection="forward">
+          <ion-label>Mood Checker</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle auto-hide="true">
+        <ion-item routerLink="/settings" routerDirection="forward">
+          <ion-label>Settings</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding"> 
+
+    <div style="text-align: start;"> 
+      <ion-title class="custom-title">Hey {{myUsername}}!</ion-title>
+    </div>
+
+    <br> 
+
+<ion-card class="mood-checker-card">
+  <ion-card-header>
+      <ion-card-title class="custom-card-title">wellness check</ion-card-title>
+  </ion-card-header>
+    
+  <ion-card-content>
+    Happy.. Sad..
+  </ion-card-content>
+    
+  <div class="button-wrapper">
+    <ion-button class="custom-button" [routerLink]="['/mood-checker']">Enter</ion-button>
+  </div>
+</ion-card>
+
+<br> 
+
+<ion-card class="gratitude-card">
+  <ion-card-header>
+    <ion-card-title class="custom-card-title">practise gratitude</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    I am grateful for..
+  </ion-card-content>
+
+  <div class="button-wrapper">
+    <ion-button class="custom-button" [routerLink]="['/gratitude']">Enter</ion-button>
+  </div>
+</ion-card>
+
+<br> 
+
+<ion-card class="sleep-card">
+  <ion-card-header>
+    <ion-card-title class="custom-card-title">for deep sleep</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    Zzz Zzz Zzz
+  </ion-card-content>
+
+  <div class="button-wrapper">
+    <ion-button class="custom-button" [routerLink]="['/sleep-helper']">Enter</ion-button>
+  </div>
+</ion-card>
+
+<br> 
+
+  </ion-content>
+</div>
+
+<!-- <ion-content [fullscreen]="true">
   <br>
 
-  <div style="text-align: center;"> <!--aligns center-->
+  <div style="text-align: center;"> 
     <ion-title>Hey! How are you doing today? </ion-title>
-    <br>
-    <ion-button [routerLink]="['/gratitude']">Practise Gratitude</ion-button>
   </div>
 
   <br>
 
-  <div style="text-align: center;"> <!--aligns center-->
+  <div style="text-align: center;">
+    <ion-button [routerLink]="['/gratitude']">Practise Gratitude</ion-button>
   <ion-button [routerLink]="['/history']">Check History</ion-button>
   </div>
 
   <br>
 
-  <div style="text-align: center;"> <!--aligns center-->
-    <ion-button [routerLink]="['/mood-checker']">Mood Time!</ion-button>
-    <ion-title>Your current mood is: {{ myStatus }} </ion-title>
-    </div>
+  
   
     <br>
 
-  <div style="text-align: center;">
-    <h3>Need some inspiration?</h3>
-    <ion-button (click)="openBrowser()">Click me</ion-button>
+  <div style="text-align: center;"> 
+    <ol>
+      <li *ngFor ="let d of quote"> <p> {{d.quote}} </p> {{d.author}} </li>
+    </ol>
   </div>
 
-  <br>
+</ion-content> -->
 
-  <ol>
-    <li *ngFor ="let d of quote"> <p> {{d.quote}} </p> {{d.author}} </li>
-  </ol>
 
-</ion-content>

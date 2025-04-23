@@ -1,0 +1,47 @@
+.header {
+    font-family: "DM Serif Display", serif;
+    font-size: 25px;
+    color:#000000;
+}
+
+ion-content {
+    --background: #bcd6e7;
+}
+
+img {
+    margin: 0 auto;
+    width: 50%;
+    height: 70%;
+    border-radius: 10px;
+  }
+
+.video-card {
+    margin: 0 auto;      // centers the card horizontally
+    padding: 50px;
+    width: 700px;
+    height: 500px;
+    font-family: "DM Serif Display", serif;
+    border: 1.90px solid black;
+    border-color:#000000;
+    border-radius: 30px; 
+    overflow: hidden;    
+    box-shadow: 0 4px 12px rgba(56, 27, 27, 0.1); 
+    
+  }
+
+  .button-wrapper {
+
+    display: flex;
+    padding: 0px;
+    border-radius: 12px;
+  
+  }
+  
+  .custom-button {
+    --color: #000000;
+    --border-radius: 30px;
+    --background: #ffffff;
+    --border-width: 1.9px;    
+    --border-style: solid;
+    --border-color:#000000;
+  }

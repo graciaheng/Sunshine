@@ -2,17 +2,17 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
-      <ion-title>Gratitude</ion-title>
+      <ion-title class="header">Gratitude</ion-title>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <br>
-<ion-title>What are you grateful for today :) <3</ion-title>
+<ion-title class="custom-title">What are you grateful for today :) <3</ion-title>
 
 <!-- dynamic list of inputs -->
-<ion-list>
+<ion-list class="gratitude-list">
   <ion-item *ngFor="let input of gratitudeInputs; let i = index">
     <ion-input
       [(ngModel)]="input.text"
@@ -26,12 +26,17 @@
 
 </ion-list>
 
-<ion-fab horizontal="end"> <!-- move the button to the right side of the page -->
-  <ion-fab-button (click)="addGratitude()">
-    <ion-icon name="add"></ion-icon>
-  </ion-fab-button>
-</ion-fab>
+<div class="circle-button-wrapper">
+  <ion-fab horizontal="end"> <!-- move the button to the right side of the page -->
+    <ion-fab-button class="custom-circle-button" (click)="addGratitude()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</div>
 
-<ion-button (click)="onDoneButtonClicked()"color="success">Done</ion-button>
+<div class="button-wrapper">
+  <ion-button class="custom-button" (click)="onDoneButtonClicked()">Done</ion-button>
+</div>
+
 
 </ion-content>

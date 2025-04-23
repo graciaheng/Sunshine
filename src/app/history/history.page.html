@@ -2,21 +2,21 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
-    <ion-title>History</ion-title>
+    <ion-title class="header">History</ion-title>
   </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <br>
-    <ion-card>
+    <ion-card class="history-card">
       <ion-card-header>
         <ion-card-title>You were grateful for...</ion-card-title>
         <ion-card-subtitle>(date)</ion-card-subtitle>
       </ion-card-header>*
 
       <div *ngFor="let input of gratitudeInputs">
-
+        
       <ion-card-content>
         <ion-list>
           <ion-item>
@@ -24,7 +24,7 @@
           </ion-item>
         </ion-list>
       </ion-card-content>
-      <ion-datetime></ion-datetime>
+      
   </div>
 </ion-card>
 

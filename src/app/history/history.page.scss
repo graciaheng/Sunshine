@@ -1,7 +1,33 @@
-ion-item {
-    --padding-start: 0;
-  }
+.header {
+    font-family: "DM Serif Display", serif;
+    font-size: 25px;
+    color:#000000;
+}
 
-  ion-card {
-    --background: #65C8E1;
-  }
+ion-content {
+  --background: #fff8b9;
+}
+
+.history-card {
+  margin: 0 auto;
+  padding: 7px;
+  --background: #ffd0d0;
+  --color: #000000;
+  width: 500px;
+  height: 500px;
+  font-family: "DM Serif Display", serif;
+  border: 1.90px solid black;
+  border-color:#000000;
+  border-radius: 30px; 
+  overflow: hidden;    
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+}
+
+ion-item {
+  --background: #ffd0d0;
+}
+
+ion-card-content {
+  --background: #ffd0d0;
+}
+

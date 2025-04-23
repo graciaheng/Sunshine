@@ -22,4 +22,12 @@ export const routes: Routes = [
     path: 'mood-checker',
     loadComponent: () => import('./mood-checker/mood-checker.page').then( m => m.MoodCheckerPage)
   },
+  {
+    path: 'settings',
+    loadComponent: () => import('./settings/settings.page').then( m => m.SettingsPage)
+  },
+  {
+    path: 'sleep-helper',
+    loadComponent: () => import('./sleep-helper/sleep-helper.page').then( m => m.SleepHelperPage)
+  },
 ];
