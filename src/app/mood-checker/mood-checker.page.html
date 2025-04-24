@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
-    <ion-title class="header">Mood-Checker</ion-title>
+    <ion-title class="header">wellness check</ion-title>
   </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -12,11 +12,12 @@
 
  <ion-card class="mood-card">
     <ion-card-header>
-      <ion-card-title>Select your mood</ion-card-title>
+      <ion-card-title>How are you feeling today?</ion-card-title>
     </ion-card-header>
     <ion-card-content>
+
   <ion-list>
-    <ion-radio-group [(ngModel)]="status">
+    <ion-radio-group [(ngModel)]="status"> <!-- data binding to get mood -->
     <ion-item>
     <ion-label class="custom-label">Joy</ion-label>
     <ion-radio slot="end" value="Joy"></ion-radio>

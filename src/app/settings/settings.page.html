@@ -41,6 +41,7 @@
   
       </ion-list>
 
+      <!-- error messages -->
       <div class="error-message" *ngIf="emailRef.invalid && emailRef.touched">
         <p *ngIf="emailRef.errors?.['required']">Email is required.</p>
         <p *ngIf="emailRef.errors?.['email']">Please enter a valid email address.</p>

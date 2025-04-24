@@ -33,7 +33,6 @@ export class HomePage implements OnInit {
   quote: any[] = [];
 
   async ionViewWillEnter(){
-    console.log("ionviewWillEnter");
     await this.storage.create();
     this.myStatus = await this.storage.get('status');
     await this.storage.create();
@@ -45,12 +44,8 @@ export class HomePage implements OnInit {
     }
 
   ngOnInit(){
-    this.dataService.GetQuoteData().subscribe(
-      (dataS) => {
-
-      console.log(dataS);
-      this.quote = dataS;
-      
+    this.dataService.GetQuoteData().subscribe((dataS) => {
+      this.quote = dataS; //get api data on quotes
     });
     }
 }

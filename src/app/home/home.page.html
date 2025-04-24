@@ -73,8 +73,8 @@
 
     <div class="custom-quote"> 
       <ol>
-        <ul *ngFor ="let d of quote"> <p> {{d.quote}} </p> </ul>
-        <ul *ngFor ="let d of quote"> <p> {{d.author}} </p> </ul>
+        <ul *ngFor ="let d of quote"> <p> "{{d.quote}}" </p> </ul>
+        <ul *ngFor ="let d of quote"> <p><em>{{d.author}}</em></p> </ul> <!-- make words italic -->
       </ol>
     </div>
 

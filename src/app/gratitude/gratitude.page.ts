@@ -26,12 +26,10 @@ export class GratitudePage implements OnInit {
 
   // Add a new input when the button is clicked
   addGratitude() {
-    console.log("aaaaaa")
     this.gratitudeInputs.push({ text: '' }); // Add a new input object with empty text
   }
 
   async ionViewWillEnter(){
-    console.log("ionviewWillEnter");
     await this.storage.create();
     //check if the array is 'null'
     this.gratitudeInputs = [{ text: '' }];
@@ -47,10 +45,10 @@ export class GratitudePage implements OnInit {
     }));
 
     await this.storage.create();
-    // Get existing history, or use an empty array if none
+    // get existing history, or use an empty array if none
     const existingHistory = await this.storage.get("history") || [];
 
-    // Append today's entries to the history
+    // append new entries into history
     const updatedHistory = [...existingHistory, ...timestampedInputs];
     await this.storage.set("history", updatedHistory);
     this.router.navigate(['/history'])

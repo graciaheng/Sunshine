@@ -32,14 +32,13 @@ export class MoodCheckerPage implements OnInit {
   }
 
   async ionViewWillEnter(){
-  console.log("ionviewWillEnter");
   await this.storage.create();
   this.status = await this.storage.get('status');
-  this.moodColor = await this.storage.get('moodColor') || '';
+  this.moodColor = await this.storage.get('moodColor') || ''; // '' in case there is no value in storage
   }
 
   async onButtonClick(){
-    const moodColors: { [key: string]: string } = {
+    const moodColors: { [key: string]: string } = { //put emotions into a map
       Joy: 'mood-joy',
       Emotional: 'mood-emotional',
       Meh: 'mood-meh',

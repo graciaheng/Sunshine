@@ -22,7 +22,6 @@ export class SettingsPage implements OnInit {
   constructor(private storage:Storage, private router:Router) { }
 
   async ionViewWillEnter(){
-    console.log("ionviewWillEnter username");
     await this.storage.create();
     this.username = await this.storage.get('username');
     this.password = await this.storage.get('password');
@@ -30,16 +29,11 @@ export class SettingsPage implements OnInit {
   }
   
   async onClickSaveDetails(){
-    console.log(this.username);
     await this.storage.create();
     await this.storage.set('username', this.username);
     await this.storage.set('password', this.password);
     await this.storage.set('email', this.email);
     this.router.navigate(['/home'])
-  }
-
-  goToHome() {
-    this.router.navigate(['/home']);
   }
 
   ngOnInit() {

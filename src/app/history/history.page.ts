@@ -31,19 +31,18 @@ import { IonDatetime } from '@ionic/angular/standalone';
     IonThumbnail, IonButtons, IonBackButton, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
 export class HistoryPage implements OnInit {
-  gratitudeInputs: { text: string; date?: string }[] = [{ text: '' }];
-  groupedGratitudes: { date: string, entries: string[] }[] = [];
+  gratitudeInputs: { text: string; date?: string }[] = [{ text: '' }]; //with date of entry
+  groupedGratitudes: { date: string, entries: string[] }[] = []; //group same date entries together
 
   constructor(private storage:Storage, private router:Router) { }
 
    async ionViewWillEnter(){
-    console.log("ionviewWillEnter HistPage");
     await this.storage.create();
-    const rawGratitudes = await this.storage.get('history') || [];
+    const rawGratitudes = await this.storage.get('history') || []; 
 
-    const grouped: { [date: string]: string[] } = {};
+    const grouped: { [date: string]: string[] } = {}; //saves keys as dates, values as arrays of gratitude texts
 
-    rawGratitudes.forEach((entry: { date: string | number | Date; text: string; }) => {
+  rawGratitudes.forEach((entry: { date: string | number | Date; text: string; }) => { //loops through each entry
     const dateOnly = new Date(entry.date).toDateString();
     if (!grouped[dateOnly]) {
       grouped[dateOnly] = [];
