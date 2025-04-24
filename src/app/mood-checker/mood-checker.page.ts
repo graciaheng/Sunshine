@@ -3,7 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
-import {  IonLabel, IonList,
+import {  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardSubtitle,
+  IonCardTitle, IonLabel, IonList,
   IonItem, IonRadio, IonRadioGroup, IonButton, IonButtons, IonBackButton, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 
 @Component({
@@ -11,14 +15,18 @@ import {  IonLabel, IonList,
   templateUrl: './mood-checker.page.html',
   styleUrls: ['./mood-checker.page.scss'],
   standalone: true,
-  imports: [ IonLabel,IonList,
+  imports: [ IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonCardSubtitle,
+    IonCardTitle, IonLabel,IonList,
     IonItem, IonRadio, IonRadioGroup, IonButton, 
     IonButtons, IonBackButton, IonContent, IonHeader, 
     IonTitle, IonToolbar, CommonModule, FormsModule]
 })
 export class MoodCheckerPage implements OnInit {
   status:string = "";
-  backgroundColor: string = '#ffffff'; // Default background
+  moodColor: string = ''; //default background
 
   constructor(private storage:Storage, private router:Router) {
   }
@@ -27,21 +35,26 @@ export class MoodCheckerPage implements OnInit {
   console.log("ionviewWillEnter");
   await this.storage.create();
   this.status = await this.storage.get('status');
+  this.moodColor = await this.storage.get('moodColor') || '';
   }
 
   async onButtonClick(){
     const moodColors: { [key: string]: string } = {
-      Joy: '#FFF59D',      // Light yellow
-      Meh: '#90CAF9',        // Light blue
-      Anxiety: '#FFAB91',  // Bright orange
-      Frustrated: '#BCAAA4'        // Soft brown/grey
+      Joy: 'mood-joy',
+      Emotional: 'mood-emotional',
+      Meh: 'mood-meh',
+      Anxiety: 'mood-anxiety',
+      Frustrated: 'mood-frustrated',
+      Calm: 'mood-calm'
     };
-    this.backgroundColor = moodColors[this.status] || '#ffffff';
+
+  this.moodColor = moodColors[this.status] || '';
 
   console.log(this.status);
   await this.storage.create();
   await this.storage.set('status', this.status);
-  this.router.navigate(['/home']);
+  await this.storage.set('moodColor', this.moodColor);
+  //this.router.navigate(['/home']);
   }
 
   ngOnInit() {

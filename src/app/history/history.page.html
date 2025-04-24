@@ -9,23 +9,18 @@
 
 <ion-content [fullscreen]="true">
   <br>
-    <ion-card class="history-card">
+    <ion-card class="history-card" *ngFor="let group of groupedGratitudes">
       <ion-card-header>
         <ion-card-title>You were grateful for...</ion-card-title>
-        <ion-card-subtitle>(date)</ion-card-subtitle>
+        <ion-card-subtitle>{{ group.date | date:'mediumDate' }}</ion-card-subtitle>
       </ion-card-header>*
-
-      <div *ngFor="let input of gratitudeInputs">
-        
       <ion-card-content>
         <ion-list>
-          <ion-item>
-            {{ input.text }} <!-- data binding -->
+          <ion-item *ngFor="let entry of group.entries">
+            {{ entry }} <!-- data binding -->
           </ion-item>
         </ion-list>
       </ion-card-content>
-      
-  </div>
 </ion-card>
 
 

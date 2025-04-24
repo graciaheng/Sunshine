@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
-import { IonInput, IonLabel, IonList,
+import { IonAlert, IonInput, IonLabel, IonList,
   IonItem, IonRadio, IonRadioGroup, IonButton, IonButtons, IonBackButton, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 
 @Component({
@@ -11,11 +11,13 @@ import { IonInput, IonLabel, IonList,
   templateUrl: './settings.page.html',
   styleUrls: ['./settings.page.scss'],
   standalone: true,
-  imports: [IonInput, IonLabel, IonList,
+  imports: [IonAlert, IonInput, IonLabel, IonList,
     IonItem, IonRadio, IonRadioGroup, IonButton, IonButtons, IonBackButton, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
 export class SettingsPage implements OnInit {
   username:string = "";
+  password:string = "";
+  email:string = "";
 
   constructor(private storage:Storage, private router:Router) { }
 
@@ -23,12 +25,20 @@ export class SettingsPage implements OnInit {
     console.log("ionviewWillEnter username");
     await this.storage.create();
     this.username = await this.storage.get('username');
+    this.password = await this.storage.get('password');
+    this.email = await this.storage.get('email');
   }
   
   async onClickSaveDetails(){
     console.log(this.username);
     await this.storage.create();
     await this.storage.set('username', this.username);
+    await this.storage.set('password', this.password);
+    await this.storage.set('email', this.email);
+    this.router.navigate(['/home'])
+  }
+
+  goToHome() {
     this.router.navigate(['/home']);
   }
 

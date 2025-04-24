@@ -17,7 +17,7 @@ import { add } from 'ionicons/icons'; //for the add button
     IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
 export class GratitudePage implements OnInit {
-  gratitudeInputs: { text: string }[] = [{ text: '' }]; //array to hold inputs, at least one should appear
+  gratitudeInputs: { text: string; date?: string }[] = [{ text: '' }]; //array to hold inputs, at least one should appear
 
   constructor(private storage:Storage, private router:Router) { 
 
@@ -34,16 +34,26 @@ export class GratitudePage implements OnInit {
     console.log("ionviewWillEnter");
     await this.storage.create();
     //check if the array is 'null'
-    if(this.gratitudeInputs.length > 1)
-     this.gratitudeInputs = await this.storage.get("history");
+    this.gratitudeInputs = [{ text: '' }];
     }
 
   async onDoneButtonClicked(){
-    console.log("hdgsahd")
-    console.log(this.gratitudeInputs);
+    
+    const timestampedInputs = this.gratitudeInputs
+    .filter(input => input.text.trim() !== '') // optional: filter out empty entries
+    .map(input => ({
+      text: input.text,
+      date: new Date().toISOString() // save date in ISO format
+    }));
+
     await this.storage.create();
-    await this.storage.set("history", this.gratitudeInputs);
-    this.router.navigate(['/history']);
+    // Get existing history, or use an empty array if none
+    const existingHistory = await this.storage.get("history") || [];
+
+    // Append today's entries to the history
+    const updatedHistory = [...existingHistory, ...timestampedInputs];
+    await this.storage.set("history", updatedHistory);
+    this.router.navigate(['/history'])
   } 
 
   ngOnInit() {

@@ -4,6 +4,70 @@
     color:#000000;
 }
 
-ion-label {
-    font-family: "DM Serif Display", serif;
+ion-content {
+    --background: #daffe5;
 }
+
+.custom-label {
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+}
+
+.custom-button {
+    padding: 10px;
+    --border-radius: 30px;
+    --background: #ffffff;
+    --border-width: 1.9px;    
+    --border-style: solid;
+    --border-color:#000000;
+    --color: #000000;
+}
+//radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(255, 172, 94, 1) 28%, rgba(255, 79, 117, 1) 85%, rgba(255, 75, 131, 1) 94%, rgba(255, 105, 162, 1) 100%);
+.mood-joy {
+    --background: radial-gradient(circle,rgba(255, 255, 255, 1) 20%, rgba(255, 237, 120, 1) 90%);
+}
+
+.mood-emotional {
+    --background: radial-gradient(circle, rgba(255, 255, 255, 1) 20%,rgba(0, 115, 161, 1) 80%, rgba(112, 74, 224, 1) 100%);
+}
+
+.mood-meh {
+    --background: radial-gradient(circle, rgba(255, 255, 255, 1) 20%,rgba(174, 157, 224, 1) 100%);
+}
+
+.mood-anxiety {
+    --background: radial-gradient(circle, rgba(255, 255, 255, 1)20%,rgb(255, 160, 77) 75%, rgb(253, 217, 84) 90%);
+}
+  
+.mood-frustrated {
+    --background: radial-gradient(circle, rgba(255, 255, 255, 1) 20%,rgb(241, 113, 113) 68%, rgb(255, 162, 247) 90%);
+}
+  
+.mood-calm {
+    --background: radial-gradient(circle, rgba(255, 255, 255, 1) 20%,rgba(162, 242, 206, 1) 90%);
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    padding: 0; 
+  }
+
+.mood-card {
+    margin: 0 auto;
+    padding: 7px;
+    --background: #ffffff;
+    --color: #000000;
+    width: 360px;
+    height: 460px;
+    font-family: "DM Serif Display", serif;
+    border: 1.90px solid black;
+    border-color:#000000;
+    border-radius: 30px; 
+    overflow: hidden;    
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    transform: translateY(150px);
+}
+

@@ -16,6 +16,10 @@ ion-button {
   --color: #000000;
 }
 
+#main-content {
+  --background: #daecca;
+}
+
 .custom-title {
   font-family: "DM Serif Display", serif;
   font-size: 25px;
@@ -29,9 +33,10 @@ ion-button {
 .gratitude-card {
   margin: 0 auto;
   padding: 7px;
-  --background: #fff8b9;
+  //--background: #fff8b9;
+  --background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(255, 172, 94, 1) 28%, rgba(255, 79, 117, 1) 85%, rgba(255, 75, 131, 1) 94%, rgba(255, 105, 162, 1) 100%);
   --color: #000000;
-  width: 410px;
+  width: 350px;
   height: 200px;
   font-family: "DM Serif Display", serif;
   border: 1.90px solid black;
@@ -60,9 +65,10 @@ ion-button {
 .mood-checker-card {
   margin: 0 auto;
   padding: 7px;
-  --background: #bbf5b0;
+  //--background: #bbf5b0;
+  --background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(183, 230, 247, 1) 23%, rgba(254, 255, 171, 1) 54%, rgba(210, 252, 211, 1) 76%, rgba(252, 210, 244, 1) 93%);
   --color: #000000;
-  width: 410px;
+  width: 350px;
   height: 200px;
   font-family: "DM Serif Display", serif;
   border: 1.90px solid black;
@@ -75,9 +81,10 @@ ion-button {
 .sleep-card {
   margin: 0 auto;
   padding: 7px;
-  --background: #bcd6e7;
+  //--background: #bcd6e7;
+  --background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(242, 160, 180, 1) 29%, rgba(204, 182, 209, 1) 67%, rgba(157, 189, 174, 1) 80%);
   --color: #000000;
-  width: 410px;
+  width: 350px;
   height: 200px;
   font-family: "DM Serif Display", serif;
   border: 1.90px solid black;
@@ -85,5 +92,35 @@ ion-button {
   border-radius: 30px; 
   overflow: hidden;    
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
-  
+}
+
+.custom-label {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+}
+
+.custom-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+
+.custom-quote {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  display: flex;       
+  justify-content: center;
+  align-items: center; 
+  text-align: center; 
+
+}
+
+.custom-quote ol {
+  list-style-type: none; 
+  padding: 0;  
+}
+
+.custom-quote p {
+  margin: 0;   
+  font-size: 1.2rem;    
+  color: #333; 
 }

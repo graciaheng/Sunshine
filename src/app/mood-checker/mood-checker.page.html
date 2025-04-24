@@ -7,38 +7,50 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" [ngStyle]="{'--background': backgroundColor}"> 
+<ion-content [fullscreen]="true" [ngClass]="moodColor" class="center-content"> 
   <br>
- 
+
+ <ion-card class="mood-card">
+    <ion-card-header>
+      <ion-card-title>Select your mood</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
   <ion-list>
     <ion-radio-group [(ngModel)]="status">
     <ion-item>
-    <ion-label>Joy</ion-label>
+    <ion-label class="custom-label">Joy</ion-label>
     <ion-radio slot="end" value="Joy"></ion-radio>
     </ion-item>
 
     <ion-item>
-    <ion-label>Anxiety</ion-label>
+    <ion-label class="custom-label">Anxiety</ion-label>
     <ion-radio slot="end" value="Anxiety"></ion-radio>
     </ion-item>
 
     <ion-item>
-    <ion-label>Frustrated</ion-label>
+      <ion-label class="custom-label">Emotional</ion-label>
+      <ion-radio slot="end" value="Emotional"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+    <ion-label class="custom-label">Frustrated</ion-label>
     <ion-radio slot="end" value="Frustrated"></ion-radio>
     </ion-item>
 
     <ion-item>
-    <ion-label>Calm</ion-label>
+    <ion-label class="custom-label">Calm</ion-label>
     <ion-radio slot="end" value="Calm"></ion-radio>
     </ion-item>
 
     <ion-item>
-      <ion-label>Meh</ion-label>
+      <ion-label class="custom-label">Meh</ion-label>
       <ion-radio slot="end" value="Meh"></ion-radio>
       </ion-item>
 
     </ion-radio-group>
     </ion-list>
-    <ion-button (click)="onButtonClick()">Save</ion-button>
-    
+    <ion-button class="custom-button" (click)="onButtonClick()">Save</ion-button>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

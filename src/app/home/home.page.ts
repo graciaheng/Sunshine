@@ -19,7 +19,7 @@ import { RouterLink } from '@angular/router';
     IonCardContent,
     IonCardHeader,
     IonCardSubtitle,
-    IonCardTitle, IonButtons, IonMenuButton, IonLabel, IonList, IonMenu,
+    IonCardTitle, IonButtons, IonLabel, IonList, IonMenuButton, IonMenu,
     IonMenuToggle, CommonModule, IonButton, RouterLink, 
     IonHeader, IonToolbar, IonTitle, IonContent],
 })
@@ -53,5 +53,4 @@ export class HomePage implements OnInit {
       
     });
     }
-
 }

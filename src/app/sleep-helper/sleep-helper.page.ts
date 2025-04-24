@@ -26,20 +26,24 @@ export class SleepHelperPage implements OnInit {
 
   constructor(private router:Router) { }
 
-  async openVideo1() {
+  async openSleepVideo1() {
     await Browser.open({url: 'https://www.youtube.com/watch?v=aEqlQvczMJQ'});
   };
 
-  async openVideo2() {
-    await Browser.open({url: 'https://www.youtube.com/watch?v=dpEGwJ6Iw0A'});
-  };
-
-  async openVideo3() {
+  async openSleepVideo2() {
     await Browser.open({url: 'https://www.youtube.com/watch?v=aqVRFEk5vao'});
   };
 
-  async openVideo4() {
+  async openSleepVideo3() {
     await Browser.open({url: 'https://www.youtube.com/watch?v=lh4JdZTJe7k'});
+  };
+
+  async openSleepVideo4() {
+    await Browser.open({url: 'https://www.youtube.com/watch?v=D8eplSV1wus'});
+  };
+
+  async openSleepVideo5() {
+    await Browser.open({url: 'https://www.youtube.com/watch?v=73Zm9VMa1N0'});
   };
 
   ngOnInit() {
