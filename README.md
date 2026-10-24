@@ -2,6 +2,8 @@
 
 A Progressive Web App (PWA) that helps users with their mental well-being. Users can practise daily gratitude, check in their mood for the day and get help with their sleep quality.
 
+https://graciaheng.github.io/Sunshine
+
 **Features**
 - Practice daily gratitude by entering what you're thankful for
 - Track gratitude entries by date, check past history as well
