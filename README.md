@@ -1,4 +1,5 @@
 **Sunshine App**
+
 A Progressive Web App (PWA) that helps users with their mental well-being. Users can practise daily gratitude, check in their mood for the day and get help with their sleep quality.
 
 **Features**
